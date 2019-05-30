@@ -20,10 +20,12 @@ class Pokemon
     pok_type = row[2]
     pokemon = self.new (name: pok_name, type: pok_type, id: pok_id, db: db)
   end
+
   def self.find(id, db)
     sql = "SELECT * FROM pokemon WHERE id = ?"
     db.execute(sql, id).map do |row|
       self.new_from_db(row, db)
     end.first
   end
+
 end
