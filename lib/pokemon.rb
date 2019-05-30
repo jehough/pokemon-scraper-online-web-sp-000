@@ -19,6 +19,7 @@ class Pokemon
     pok_name = row[1]
     pok_type = row[2]
     pokemon = self.new (name: pok_name, type: pok_type, id: pok_id, db: db)
+    pokemon
   end
 
   def self.find(id, db)
