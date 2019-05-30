@@ -5,5 +5,7 @@ class Pokemon
     @name = name
     @type = type
     @id = id
+    sql = "INSERT INTO pokemon (id, name, type) VALUES(?, ?, ?)"
+    db.execute(sql, self.id, self.name, self.type)
   end
 end
